@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NFTMarketplace</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="scss/style.css">
+  <link rel="stylesheet" href="scss/main.css">
+</head>
+
+<body>
+  <svg display="none">
+    <defs>
+      <g id="img-category">
+        <path xmlns="http://www.w3.org/2000/svg" fill="#1B1BDD"
+          d="M20.2259 2.16699H18.1676C15.8059 2.16699 14.5601 3.41283 14.5601 5.77449V7.83283C14.5601 10.1945 15.8059 11.4403 18.1676 11.4403H20.2259C22.5876 11.4403 23.8334 10.1945 23.8334 7.83283V5.77449C23.8334 3.41283 22.5876 2.16699 20.2259 2.16699Z" />
+        <path xmlns="http://www.w3.org/2000/svg" fill="#1B1BDD"
+          d="M7.84341 14.5488H5.78508C3.41258 14.5488 2.16675 15.7947 2.16675 18.1563V20.2147C2.16675 22.5872 3.41258 23.833 5.77425 23.833H7.83258C10.1942 23.833 11.4401 22.5872 11.4401 20.2255V18.1672C11.4509 15.7947 10.2051 14.5488 7.84341 14.5488Z" />
+        <path xmlns="http://www.w3.org/2000/svg" fill="#7777EE"
+          d="M6.81425 11.462C9.38099 11.462 11.4617 9.38124 11.4617 6.81449C11.4617 4.24775 9.38099 2.16699 6.81425 2.16699C4.2475 2.16699 2.16675 4.24775 2.16675 6.81449C2.16675 9.38124 4.2475 11.462 6.81425 11.462Z" />
+        <path xmlns="http://www.w3.org/2000/svg" fill="#7777EE"
+          d="M19.1858 23.8331C21.7526 23.8331 23.8333 21.7523 23.8333 19.1856C23.8333 16.6188 21.7526 14.5381 19.1858 14.5381C16.6191 14.5381 14.5383 16.6188 14.5383 19.1856C14.5383 21.7523 16.6191 23.8331 19.1858 23.8331Z" />
+      </g>
+    </defs>
+  </svg>
+  <svg display="none">
+    <defs>
+      <g id="img-shop">
+        <path xmlns="http://www.w3.org/2000/svg" stroke="#AEAEAE" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="1.5"
+          d="M3.01001 11.2197V15.7097C3.01001 20.1997 4.81001 21.9997 9.30001 21.9997H14.69C19.18 21.9997 20.98 20.1997 20.98 15.7097V11.2197" />
+        <path xmlns="http://www.w3.org/2000/svg" stroke="#AEAEAE" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="1.5"
+          d="M12 12C13.83 12 15.18 10.51 15 8.68L14.34 2H9.66999L8.99999 8.68C8.81999 10.51 10.17 12 12 12Z" />
+        <path xmlns="http://www.w3.org/2000/svg" stroke="#AEAEAE" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="1.5"
+          d="M18.31 12C20.33 12 21.81 10.36 21.61 8.35L21.33 5.6C20.97 3 19.97 2 17.35 2H14.3L15 9.01C15.17 10.66 16.66 12 18.31 12Z" />
+        <path xmlns="http://www.w3.org/2000/svg" stroke="#AEAEAE" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="1.5"
+          d="M5.63988 12C7.28988 12 8.77988 10.66 8.93988 9.01L9.15988 6.8L9.63988 2H6.58988C3.96988 2 2.96988 3 2.60988 5.6L2.33988 8.35C2.13988 10.36 3.61988 12 5.63988 12Z" />
+        <path xmlns="http://www.w3.org/2000/svg" stroke="#AEAEAE" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="1.5" d="M12 17C10.33 17 9.5 17.83 9.5 19.5V22H14.5V19.5C14.5 17.83 13.67 17 12 17Z" />
+      </g>
+    </defs>
+  </svg>
+  <svg display="none">
+    <defs>
+      <g id="img-folder">
+        <path xmlns="http://www.w3.org/2000/svg" stroke="#AEAEAE" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="1.5"
+          d="M21.4446 15.7574C21.4446 19.3356 19.336 21.4441 15.7579 21.4441H7.97173C4.38444 21.4441 2.27588 19.3356 2.27588 15.7574V7.96211C2.27588 4.38395 3.59031 2.27539 7.16847 2.27539H9.16749C9.88576 2.27539 10.5621 2.61357 10.9931 3.18819L11.9059 4.40221C12.3378 4.9757 13.0135 5.31357 13.7315 5.315H16.5611C20.1484 5.315 21.472 7.14059 21.472 10.7918L21.4446 15.7574Z"
+          clip-rule="evenodd" />
+        <path xmlns="http://www.w3.org/2000/svg" stroke="#AEAEAE" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="1.5" d="M7.05884 14.4886H16.6523" />
+      </g>
+    </defs>
+  </svg>
+  <svg display="none">
+    <defs>
+      <g id="img-judge">
+        <path xmlns="http://www.w3.org/2000/svg" stroke="#AEAEAE" stroke-linecap="round" stroke-linejoin="round"
+          stroke-miterlimit="10" stroke-width="1.5" d="M20.0101 18.5096L15.0601 13.5596" />
+        <path xmlns="http://www.w3.org/2000/svg" stroke="#AEAEAE" stroke-linecap="round" stroke-linejoin="round"
+          stroke-miterlimit="10" stroke-width="1.5"
+          d="M15.06 13.56L11.52 17.1C10.74 17.88 9.47 17.88 8.69 17.1L4.44999 12.86C3.66999 12.08 3.66999 10.81 4.44999 10.03L11.52 2.96C12.3 2.18 13.57 2.18 14.35 2.96L18.59 7.20002C19.37 7.98002 19.37 9.25001 18.59 10.03L15.06 13.56Z" />
+        <path xmlns="http://www.w3.org/2000/svg" stroke="#AEAEAE" stroke-linecap="round" stroke-linejoin="round"
+          stroke-miterlimit="10" stroke-width="1.5" d="M2 21H8" />
+        <path xmlns="http://www.w3.org/2000/svg" stroke="#AEAEAE" stroke-linecap="round" stroke-linejoin="round"
+          stroke-miterlimit="10" stroke-width="1.5" d="M6.56006 7.91992L13.6301 14.9899" />
+      </g>
+    </defs>
+  </svg>
+  <svg display="none">
+    <defs>
+      <g id="img-favorite">
+        <path xmlns="http://www.w3.org/2000/svg" stroke="#AEAEAE" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="1.5"
+          d="M19 8C20.6569 8 22 6.65685 22 5C22 3.34315 20.6569 2 19 2C17.3431 2 16 3.34315 16 5C16 6.65685 17.3431 8 19 8Z" />
+        <path xmlns="http://www.w3.org/2000/svg" stroke="#AEAEAE" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="1.5" d="M14 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V10" />
+        <path xmlns="http://www.w3.org/2000/svg" stroke="#AEAEAE" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="1.5"
+          d="M6.80998 14.9299C6.45998 13.8299 6.86998 12.4599 8.02998 12.0899C8.63998 11.8899 9.38998 12.0599 9.81998 12.6499C10.22 12.0399 11 11.8999 11.6 12.0899C12.76 12.4599 13.17 13.8299 12.82 14.9299C12.27 16.6799 10.35 17.5899 9.81998 17.5899C9.27998 17.5799 7.37998 16.6899 6.80998 14.9299Z" />
+      </g>
+    </defs>
+  </svg>
+  <svg display="none">
+    <defs>
+      <g id="img-message">
+        <path xmlns="http://www.w3.org/2000/svg" stroke="#AEAEAE" stroke-linecap="round" stroke-linejoin="round"
+          stroke-miterlimit="10" stroke-width="1.5"
+          d="M22 8V13C22 17 20 19 16 19H15.5C15.19 19 14.89 19.15 14.7 19.4L13.2 21.4C12.54 22.28 11.46 22.28 10.8 21.4L9.3 19.4C9.14 19.18 8.77 19 8.5 19H8C4 19 2 18 2 13V8C2 4 4 2 8 2H12" />
+        <path xmlns="http://www.w3.org/2000/svg" stroke="#AEAEAE" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="1.5"
+          d="M15.2 4.61959C14.87 3.62959 15.26 2.40959 16.34 2.06959C16.9 1.89959 17.6 2.03959 18 2.56959C18.38 2.01959 19.1 1.89959 19.66 2.06959C20.74 2.39959 21.13 3.62959 20.8 4.61959C20.29 6.18959 18.5 6.99959 18 6.99959C17.5 6.99959 15.73 6.19959 15.2 4.61959Z" />
+        <path xmlns="http://www.w3.org/2000/svg" stroke="#AEAEAE" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="2" d="M15.9965 11H16.0054" />
+        <path xmlns="http://www.w3.org/2000/svg" stroke="#AEAEAE" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="2" d="M11.9955 11H12.0045" />
+        <path xmlns="http://www.w3.org/2000/svg" stroke="#AEAEAE" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="2" d="M7.99451 11H8.00349" />
+      </g>
+    </defs>
+  </svg>
+  <svg display="none">
+    <defs>
+      <g id="img-settings">
+        <path xmlns="http://www.w3.org/2000/svg" stroke="#AEAEAE" stroke-linecap="round" stroke-linejoin="round"
+          stroke-miterlimit="10" stroke-width="1.5"
+          d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" />
+        <path xmlns="http://www.w3.org/2000/svg" stroke="#AEAEAE" stroke-linecap="round" stroke-linejoin="round"
+          stroke-miterlimit="10" stroke-width="1.5"
+          d="M2 12.8804V11.1204C2 10.0804 2.85 9.22043 3.9 9.22043C5.71 9.22043 6.45 7.94042 5.54 6.37042C5.02 5.47042 5.33 4.30042 6.24 3.78042L7.97 2.79042C8.76 2.32042 9.78 2.60042 10.25 3.39042L10.36 3.58042C11.26 5.15042 12.74 5.15042 13.65 3.58042L13.76 3.39042C14.23 2.60042 15.25 2.32042 16.04 2.79042L17.77 3.78042C18.68 4.30042 18.99 5.47042 18.47 6.37042C17.56 7.94042 18.3 9.22043 20.11 9.22043C21.15 9.22043 22.01 10.0704 22.01 11.1204V12.8804C22.01 13.9204 21.16 14.7804 20.11 14.7804C18.3 14.7804 17.56 16.0604 18.47 17.6304C18.99 18.5404 18.68 19.7004 17.77 20.2204L16.04 21.2104C15.25 21.6804 14.23 21.4004 13.76 20.6104L13.65 20.4204C12.75 18.8504 11.27 18.8504 10.36 20.4204L10.25 20.6104C9.78 21.4004 8.76 21.6804 7.97 21.2104L6.24 20.2204C5.33 19.7004 5.02 18.5304 5.54 17.6304C6.45 16.0604 5.71 14.7804 3.9 14.7804C2.85 14.7804 2 13.9204 2 12.8804Z" />
+      </g>
+    </defs>
+  </svg>
+  <svg display="none">
+    <defs>
+      <g id="img-logout">
+        <path xmlns="http://www.w3.org/2000/svg" stroke="#AEAEAE" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="1.5"
+          d="M15.016 7.38948V6.45648C15.016 4.42148 13.366 2.77148 11.331 2.77148H6.45597C4.42197 2.77148 2.77197 4.42148 2.77197 6.45648V17.5865C2.77197 19.6215 4.42197 21.2715 6.45597 21.2715H11.341C13.37 21.2715 15.016 19.6265 15.016 17.5975V16.6545" />
+        <path xmlns="http://www.w3.org/2000/svg" stroke="#AEAEAE" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="1.5" d="M21.8096 12.0215H9.76855" />
+        <path xmlns="http://www.w3.org/2000/svg" stroke="#AEAEAE" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="1.5" d="M18.8811 9.10645L21.8091 12.0214L18.8811 14.9374" />
+      </g>
+    </defs>
+  </svg>
+  <svg display="none">
+    <defs>
+      <g id="img-sidebar-profile-setting">
+        <path xmlns="http://www.w3.org/2000/svg" fill="#AEAEAE"
+          d="M18 -1.74846e-07C19.1035 -7.8374e-08 20 0.896868 20 1.99917C20 3.10146 19.1035 4 18 4C16.8965 4 16 3.10146 16 1.99916C16 0.896868 16.8965 -2.71317e-07 18 -1.74846e-07Z" />
+        <path xmlns="http://www.w3.org/2000/svg" fill="#AEAEAE"
+          d="M10 -1.74846e-07C11.1035 -7.8374e-08 12 0.896868 12 1.99917C12 3.10146 11.1035 4 10 4C8.89649 4 8 3.10146 8 1.99916C8 0.896868 8.89649 -2.71317e-07 10 -1.74846e-07Z" />
+        <path xmlns="http://www.w3.org/2000/svg" fill="#AEAEAE"
+          d="M2 -1.74846e-07C3.10351 -7.8374e-08 4 0.896868 4 1.99917C4 3.10146 3.10351 4 2 4C0.896494 4 3.16971e-07 3.10146 4.13337e-07 1.99916C5.09703e-07 0.896868 0.896494 -2.71317e-07 2 -1.74846e-07Z" />
+      </g>
+    </defs>
+  </svg>
+  <svg display="none">
+    <defs>
+      <g id="img-upload">
+        <path xmlns="http://www.w3.org/2000/svg" fill="#AEAEAE" stroke="#AEAEAE" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="1.3"
+          d="M5.54211 6.7379H4.84236C3.31611 6.7379 2.07861 7.9754 2.07861 9.50165L2.07861 13.1579C2.07861 14.6834 3.31611 15.9209 4.84236 15.9209H13.1899C14.7161 15.9209 15.9536 14.6834 15.9536 13.1579V9.49415C15.9536 7.9724 14.7199 6.7379 13.1981 6.7379H12.4909" />
+        <path xmlns="http://www.w3.org/2000/svg" fill="#AEAEAE" stroke="#AEAEAE" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="1.3" d="M9.01611 1.64308V10.6738" />
+        <path xmlns="http://www.w3.org/2000/svg" fill="#AEAEAE" stroke="#AEAEAE" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="1.3" d="M6.82959 3.83887L9.01584 1.64287L11.2028 3.83887" />
+      </g>
+    </defs>
+  </svg>
+  <svg display="none">
+    <defs>
+      <g id="img-like">
+        <path xmlns="http://www.w3.org/2000/svg" stroke="#373748" stroke-linecap="round" stroke-linejoin="round"
+          d="M10.3029 17.3046C8.51218 16.2025 6.84626 14.9054 5.33501 13.4365C4.27253 12.3786 3.46368 11.089 2.9704 9.66639C2.08274 6.9067 3.11959 3.74738 6.02127 2.8124C7.54628 2.32145 9.21182 2.60205 10.4969 3.56641C11.7824 2.60323 13.4474 2.32273 14.9725 2.8124C17.8742 3.74738 18.9185 6.9067 18.0308 9.66639C17.5375 11.089 16.7287 12.3786 15.6662 13.4365C14.1549 14.9054 12.489 16.2025 10.6983 17.3046L10.5043 17.4252L10.3029 17.3046Z"
+          clip-rule="evenodd" />
+        <path xmlns="http://www.w3.org/2000/svg" stroke="#373748" stroke-linecap="round" stroke-linejoin="round"
+          d="M13.585 5.91895C14.4638 6.19969 15.0883 6.98872 15.1663 7.91708" />
+      </g>
+    </defs>
+  </svg>
+
+
+  <div class="site-container">
+
+    <header class="header">
+      <div class="container header__container">
+        <div class="header__intro">
+          <div class="header__intro-name">
+            Hello, Andri
+          </div>
+          <div class="header__intro-text">
+            39.506M+ items in NFT market Place!
+          </div>
+        </div>
+        <div class="header__right">
+          <div class="header__search">
+            <button class="btn-reset header__search-btn" aria-label="search"></button>
+            <input type="search" class="header__search-input" placeholder="Search something...">
+          </div>
+          <div class="header__menu">
+            <button class="btn-reset header__menu-btn header__menu-btn--filter" aria-label="filter"></button>
+            <button class="btn-reset header__menu-btn header__menu-btn--notif" aria-label="notification">
+              <img src="img/ellipse-notif.svg" alt="" class="header__menu-notify" aria-hidden="true">
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <aside class="sidebar sidebar--nav">
+      <img src="img/logo.png" alt="NFT" class="sidebar__logo">
+      <nav class="nav sidebar__nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#" class="nav__link" aria-label="category">
+              <svg class="nav__svg hover-svg">
+                <use xlink:href="#img-category"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link" aria-label="shop">
+              <svg class="hover-svg nav__svg">
+                <use xlink:href="#img-shop" stroke="#0000ff"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link" aria-label="folder">
+              <svg class="nav__svg hover-svg">
+                <use xlink:href="#img-folder"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link" aria-label="judge">
+              <svg class="nav__svg hover-svg">
+                <use xlink:href="#img-judge"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link" aria-label="favorite">
+              <svg class="nav__svg hover-svg">
+                <use xlink:href="#img-favorite"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link" aria-label="message">
+              <svg class="nav__svg hover-svg">
+                <use xlink:href="#img-message"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link" aria-label="settings">
+              <svg class="hover-svg nav__svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
+                  stroke="#AEAEAE" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M2 12.8804V11.1204C2 10.0804 2.85 9.22043 3.9 9.22043C5.71 9.22043 6.45 7.94042 5.54 6.37042C5.02 5.47042 5.33 4.30042 6.24 3.78042L7.97 2.79042C8.76 2.32042 9.78 2.60042 10.25 3.39042L10.36 3.58042C11.26 5.15042 12.74 5.15042 13.65 3.58042L13.76 3.39042C14.23 2.60042 15.25 2.32042 16.04 2.79042L17.77 3.78042C18.68 4.30042 18.99 5.47042 18.47 6.37042C17.56 7.94042 18.3 9.22043 20.11 9.22043C21.15 9.22043 22.01 10.0704 22.01 11.1204V12.8804C22.01 13.9204 21.16 14.7804 20.11 14.7804C18.3 14.7804 17.56 16.0604 18.47 17.6304C18.99 18.5404 18.68 19.7004 17.77 20.2204L16.04 21.2104C15.25 21.6804 14.23 21.4004 13.76 20.6104L13.65 20.4204C12.75 18.8504 11.27 18.8504 10.36 20.4204L10.25 20.6104C9.78 21.4004 8.76 21.6804 7.97 21.2104L6.24 20.2204C5.33 19.7004 5.02 18.5304 5.54 17.6304C6.45 16.0604 5.71 14.7804 3.9 14.7804C2.85 14.7804 2 13.9204 2 12.8804Z"
+                  stroke="#AEAEAE" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <button class="btn-reset sidebar__logout" aria-label="logout">
+        <svg class="sidebar__logout-svg" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" version="1.1"
+          preserveAspectRatio="xMinYMin">
+          <use xlink:href="#img-logout"></use>
+        </svg>
+      </button>
+    </aside>
+
+    <main class="main">
+      <section class="profile">
+        <div class="container profile__container">
+          <div class="profile__preview">
+            <div class="profile__time">
+              <time class="profile__time-value" data-time="5:40:30">
+                5h : 40m : 30s
+              </time>
+            </div>
+          </div>
+          <div class="profile__stat">
+            <h1 class="profile__title">
+              Purple Mannequin 3d Art Design
+            </h1>
+            <div class="profile__bid profile__stat-bid">
+              <div class="profile__bid-info">
+                <div class="profile__bid-caption">
+                  Current Bid
+                </div>
+                <div class="profile__bid-current">
+                  0.986 ETH
+                </div>
+              </div>
+              <button class="btn-reset profile__bid-btn" aria-label="Place a Bid">
+                Place a Bid
+              </button>
+            </div>
+            <div class="profile__stat-info">
+              <ul class="profile__data">
+                <li class="profile__data-item">
+                  <div class="profile__data-designation">
+                    <div class="profile__data-marker"></div>
+                    <div class="profile__data-title">
+                      Date
+                    </div>
+                  </div>
+                  <div class="profile__data-right">
+                    <time class="profile__data-time profile__data-value" data-time="2022-03-02">
+                      02 - 03 - 2022
+                    </time>
+                  </div>
+                </li>
+                <li class="profile__data-item">
+                  <div class="profile__data-designation">
+                    <div class="profile__data-marker"></div>
+                    <div class="profile__data-title">
+                      Metadata
+                    </div>
+                  </div>
+                  <div class="profile__data-right">
+                    <div class="profile__data-value">
+                      Frozen
+                    </div>
+                  </div>
+                </li>
+                <li class="profile__data-item">
+                  <div class="profile__data-designation">
+                    <div class="profile__data-marker"></div>
+                    <div class="profile__data-title">
+                      Blockchain
+                    </div>
+                  </div>
+                  <div class="profile__data-right">
+                    <div class="profile__data-value">
+                      Ethereum
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="profile__stat-creator profile__creator">
+              <div class="profile__creator-person">
+                <img src="img/creator-avatar.png" alt="avatar creator" class="profile__creator-avatar">
+                <div class="profile__creator-info">
+                  <a href="#" class="profile__creator-name" aria-label="visit the page">
+                    Nadim Amanda
+                  </a>
+                  <div class="profile__creator-status">
+                    Creator
+                  </div>
+                </div>
+              </div>
+              <div class="profile__creator-income profile__income">
+                <div class="profile__income-preview">
+                  <img src="img/profile-eth.svg" alt="Ethereum" class="profile__incom-icon">
+                </div>
+                <div class="profile__income-descr">
+                  <div class="profile__income-type">
+                    2.5 ETH
+                  </div>
+                  <div class="profile__income-price">
+                    Instant Price
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="collection">
+        <div class="container">
+          <div class="collection__intro">
+            <h2 class="collection__title">
+              Top Collection
+            </h2>
+            <button class="btn-reset collection__view" aria-label="view all collection">
+              View All
+            </button>
+          </div>    
+          <ul class="collection__card card">
+            <li class="card__item">
+              <article class="card__article">
+                <div class="card__article-top">
+                  <div class="card__author">
+                    <img src="img/collection-avatar.png" alt="avatar" class="card__author-avatar">
+                    <div class="card__author-info">
+                      <a href="#" class="card__author-name">
+                        Wi Seung Hyun
+                      </a>
+                      <div class="card__author-status">
+                        Owner
+                      </div>
+                    </div>
+                  </div>
+                  <button class="btn-reset card__like">
+                    <svg class="card__like-icon">
+                      <use xlink:href="#img-like"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="card-art">
+                  <div class="card-art__preview">
+                    <img src="img/card-art-1.png" alt="art image" class="card-art__preview-img">
+                    <button class="btn-reset card-art__bid" aria-label="Place a Bid">
+                      Place a Bid
+                    </button>
+                  </div>
+                  <a href="#" class="card-art__title" aria-label="link to art">
+                    Yellow Tree Human Art
+                  </a>
+                </div>
+                <div class="card__static">
+                  <div class="card__static-ending">
+                    <div class="card__static-caption">
+                      Ending in
+                    </div>
+                    <time class="card__static-value" data-time="5:12:6">
+                      5h 12m 6s
+                    </time>
+                  </div>
+                  <div class="card__static-bet">
+                    <div class="card__static-caption">
+                      Highest bid
+                    </div>
+                    <div class="card__static-value">
+                      5.54 ETH
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="card__item">
+              <article class="card__article">
+                <div class="card__article-top">
+                  <div class="card__author">
+                    <img src="img/collection-avatar.png" alt="avatar" class="card__author-avatar">
+                    <div class="card__author-info">
+                      <a href="#" class="card__author-name">
+                        Kim Tak
+                      </a>
+                      <div class="card__author-status">
+                        Owner
+                      </div>
+                    </div>
+                  </div>
+                  <button class="btn-reset card__like">
+                    <svg class="card__like-icon">
+                      <use xlink:href="#img-like"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="card-art">
+                  <div class="card-art__preview">
+                    <img src="img/card-art-2.png" alt="art image" class="card-art__preview-img">
+                    <button class="btn-reset card-art__bid" aria-label="Place a Bid">
+                      Place a Bid
+                    </button>
+                  </div>
+                  <a href="#" class="card-art__title" aria-label="link to art">
+                    Green Tree Human Art
+                  </a>
+                </div>
+                <div class="card__static">
+                  <div class="card__static-ending">
+                    <div class="card__static-caption">
+                      Ending in
+                    </div>
+                    <time class="card__static-value" data-time="6:12:6">
+                      6h 12m 6s
+                    </time>
+                  </div>
+                  <div class="card__static-bet">
+                    <div class="card__static-caption">
+                      Highest bid
+                    </div>
+                    <div class="card__static-value">
+                      3.54 ETH
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="card__item">
+              <article class="card__article">
+                <div class="card__article-top">
+                  <div class="card__author">
+                    <img src="img/collection-avatar.png" alt="avatar" class="card__author-avatar">
+                    <div class="card__author-info">
+                      <a href="#" class="card__author-name">
+                        Kim Tae-Mu
+                      </a>
+                      <div class="card__author-status">
+                        Owner
+                      </div>
+                    </div>
+                  </div>
+                  <button class="btn-reset card__like">
+                    <svg class="card__like-icon">
+                      <use xlink:href="#img-like"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="card-art">
+                  <div class="card-art__preview">
+                    <img src="img/card-art-3.png" alt="art image" class="card-art__preview-img">
+                    <button class="btn-reset card-art__bid" aria-label="Place a Bid">
+                      Place a Bid
+                    </button>
+                  </div>
+                  <a href="#" class="card-art__title" aria-label="link to art">
+                    White Tree Human Art
+                  </a>
+                </div>
+                <div class="card__static">
+                  <div class="card__static-ending">
+                    <div class="card__static-caption">
+                      Ending in
+                    </div>
+                    <time class="card__static-value" data-time="7:12:6">
+                      7h 12m 6s
+                    </time>
+                  </div>
+                  <div class="card__static-bet">
+                    <div class="card__static-caption">
+                      Highest bid
+                    </div>
+                    <div class="card__static-value">
+                      4.54 ETH
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <aside class="sidebar sidebar-right">
+      <div class="sidebar-mobile">
+        <button class="btn-reset sidebar-mobile__open" aria-label="open sidebar">
+          <span class="sidebar-mobile__open-line"></span>
+        </button>
+      </div>
+      <div class="sidebar-right__profile sidebar-profile">
+        <div class="sidebar-profile__preview">
+          <img src="img/backdrop-profile.png" alt="backgrop profile" class="sidebar-profile__backdrop">
+          <div class="sidebar-profile__data">
+            <div class="sidebar-profile__data-avatar">
+              <img src="img/sidebar-profile-avatar.png" alt="profile avatar" class="sidebar-profile__avatar">
+            </div>          
+            <div class="sidebar-profile__data-info">
+              <div class="sidebar-profile__name">
+                Andri Young
+              </div>
+              <div class="sidebar-profile__descr">
+                Collector
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar-profile__biography">
+          <div class="sidebar-profile__biography-caption">
+            Biography
+          </div>
+          <p class="sidebar-profile__biography-text">
+            The Collector was effectively the most important administrative figure in an Indian district.
+          </p>
+        </div>
+        <div class="sidebar-profile__actions">
+          <button class="btn-reset sidebar-profile__actions-follow sidebar-profile__actions-btn" aria-label="btn follow">
+            Follow +
+          </button>
+          <button class="btn-reset sidebar-profile__actions-btn sidebar-profile__actions-btn--svg" aria-label="upload">
+            <svg class="sidebar-profile__actions-icon sidebar-profile__actions-icon--upload">
+              <use xlink:href="#img-upload"></use>
+            </svg>
+          </button>
+          <button class="btn-reset sidebar-profile__actions-btn sidebar-profile__actions-btn--svg" aria-label="setting">
+            <svg class="sidebar-profile__actions-icon sidebar-profile__actions-icon--setting">
+              <use xlink:href="#img-sidebar-profile-setting"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="sidebar-right__rec sidebar-rec">
+        <ul class="sidebar-rec__list">
+          <li class="sidebar-rec__item">
+            <div class="sidebar-rec__item-current">
+              1
+            </div>
+            <div class="sidebar-rec__item-info">
+              <img src="img/sidebar-rec-avatar.png" alt="avatar" class="sidebar-rec__item-avatar">
+              <div class="sidebar-rec__item-data">
+                <a href="#" class="sidebar-rec__item-name">
+                  Stella Amanda
+                </a>
+                <div class="sidebar-rec__item-subs sidebar-rec__subs">
+                  <img src="img/sidebar-subs-icon.svg" alt="icon" class="sidebar-rec__subs-icon">
+                  <span class="sidebar-rec__subs-quantity">
+                    6.049.85
+                  </span>
+                </div>
+              </div>
+            </div>
+            <button class="btn-reset sidebar-rec__add" aria-label="add to subscribers">
+              <img src="img/sidebar-rec-add.png" alt="add" class="sidebar-rec__add-icon">
+            </button>    
+          </li>
+          <li class="sidebar-rec__item">
+            <div class="sidebar-rec__item-current">
+              2
+            </div>
+            <div class="sidebar-rec__item-info">
+              <img src="img/sidebar-rec-avatar.png" alt="avatar" class="sidebar-rec__item-avatar">
+              <div class="sidebar-rec__item-data">
+                <a href="#" class="sidebar-rec__item-name">
+                  Angelina Young
+                </a>
+                <div class="sidebar-rec__item-subs sidebar-rec__subs">
+                  <img src="img/sidebar-subs-icon.svg" alt="icon" class="sidebar-rec__subs-icon">
+                  <span class="sidebar-rec__subs-quantity">
+                    6.049.85
+                  </span>
+                </div>
+              </div>
+            </div>
+            <button class="btn-reset sidebar-rec__add" aria-label="add to subscribers">
+              <img src="img/sidebar-rec-add.png" alt="add" class="sidebar-rec__add-icon">
+            </button>
+          </li>
+          <li class="sidebar-rec__item">
+            <div class="sidebar-rec__item-current">
+              3
+            </div>
+            <div class="sidebar-rec__item-info">
+              <img src="img/sidebar-rec-avatar.png" alt="avatar" class="sidebar-rec__item-avatar">
+              <div class="sidebar-rec__item-data">
+                <a href="#" class="sidebar-rec__item-name">
+                  Michael Ching
+                </a>
+                <div class="sidebar-rec__item-subs sidebar-rec__subs">
+                  <img src="img/sidebar-subs-icon.svg" alt="icon" class="sidebar-rec__subs-icon">
+                  <span class="sidebar-rec__subs-quantity">
+                    6.049.85
+                  </span>
+                </div>
+              </div>
+            </div>
+            <button class="btn-reset sidebar-rec__add" aria-label="add to subscribers">
+              <img src="img/sidebar-rec-add.png" alt="add" class="sidebar-rec__add-icon">
+            </button>
+          </li>
+          <li class="sidebar-rec__item">
+            <div class="sidebar-rec__item-current">
+              4
+            </div>
+            <div class="sidebar-rec__item-info">
+              <img src="img/sidebar-rec-avatar.png" alt="avatar" class="sidebar-rec__item-avatar">
+              <div class="sidebar-rec__item-data">
+                <a href="#" class="sidebar-rec__item-name">
+                  Daniel Ching
+                </a>
+                <div class="sidebar-rec__item-subs sidebar-rec__subs">
+                  <img src="img/sidebar-subs-icon.svg" alt="icon" class="sidebar-rec__subs-icon">
+                  <span class="sidebar-rec__subs-quantity">
+                    6.049.85
+                  </span>
+                </div>
+              </div>
+            </div>
+            <button class="btn-reset sidebar-rec__add" aria-label="add to subscribers">
+              <img src="img/sidebar-rec-add.png" alt="add" class="sidebar-rec__add-icon">
+            </button>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+</body>
+
+</html>
